@@ -4,8 +4,6 @@ test("GET top /api/v1/status should return 200", async () => {
 
   const responseBody = await response.json();
 
-  console.log(responseBody);
-
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt);
   expect(responseBody.dependecies.database.version).toEqual("16.0");
